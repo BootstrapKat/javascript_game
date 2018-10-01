@@ -1,5 +1,3 @@
-# javascript_game
-
 <h1>Create an online game written in JavaScript</h1>
 <h2>Front End Web Developer Project 6</h2>
 <hr>
