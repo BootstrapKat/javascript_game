@@ -1,6 +1,6 @@
 <h1>Create an online game written in JavaScript</h1>
 <h2>Front End Web Developer Project 6</h2>
-<hr>
+
 <h3>JavaScript, JQuery, HTML5, CSS3</h3>
 
 
