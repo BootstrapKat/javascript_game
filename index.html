@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Strength</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Julee" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3 order-1 order-md-3 text-right">
+        <img id="newGame" class="img-fluid mt-5 p-2" src="images/find-strength.png">
+      </div>
+      <div class="col-12 col-md-6 order-md-2 m-auto text-center">
+        <img class="title-img img-fluid" src="images/title.png" alt="Strength">
+      </div>
+      <div class="col-6 col-md-3">
+        <img id="rules" class="img-fluid mt-5 p-2" src="images/learn-strength.png">
+      </div>
+      <!-- <div class="col-6 col-md-3 text-right d-block d-md-none">
+        <img id="newGame" class="img-fluid mt-5 p-2" src="images/find-strength.png">
+      </div> -->
+    </div>
+  </div>
+  <main id="game1" class="container">
+    <div class="row">
+
+      <aside id="player1" class="player-board col-6 col-md-2 order-2 order-md-1 text-center">
+        <h2>Hunter</h2>
+        <img class="profile-pic" src="images/hunter.png" alt="Player 1">
+        <div id="p1_profile" class="d-flex flex-column justify-content-center align-items-center">
+          <span>Health</span>
+          <span class="value" id="p1_health">0</span>
+        </div>
+        <div id="p1_weapon" class="d-flex flex-column justify-content-center align-items-center">
+          <img src="images/weapon1.png" alt="Weapon">
+
+          <span>Attack</span>
+          <span class="value" id="p1_damage">0</span>
+        </div>
+        <div id="p1_shield1" class="d-flex flex-column justify-content-center align-items-center">
+          <img src="images/shield.png" alt="Shield">
+
+          <span>Shield</span>
+          <span class="value" id="p1_shield">DOWN</span>
+        </div>
+      </aside>
+      <section id="map" class="col-md-8 order-1 order-md-2 my-auto">
+
+      </section>
+      <aside id="player2" class="player-board col-6 col-md-2 order-3 text-center">
+        <h2>Huntress</h2>
+        <img class="profile-pic" src="images/huntress.png" alt="Player 2">
+        <div id="p2_profile" class="d-flex flex-column justify-content-center align-items-center">
+          <span>Health</span>
+          <span class="value" id="p2_health">0</span>
+        </div>
+        <div id="p2_weapon" class="d-flex flex-column justify-content-center align-items-center">
+          <img src="images/weapon1.png" alt="Weapon">
+          <span>Attack</span>
+          <span class="value" id="p2_damage">0</span>
+        </div>
+        <div id="p2_shield2" class="d-flex flex-column justify-content-center align-items-center">
+          <img src="images/shield.png" alt="Shield">
+          <span>Shield</span>
+          <span class="value" id="p2_shield">DOWN</span>
+        </div>
+      </aside>
+    </div>
+
+  </main>
+  <div class="rules">
+    <a href="" class="close"></a>
+    <img class="img-fluid mb-4" src="images/learnStrength.png">
+    <p>You are hunter/huntress that has fallen into a demon maze. To escape you must prove your strength by defeating your
+      fellow hunter/huntress.</p>
+    <ul>
+      <li>Hunters can move up to 3 spaces per turn.</li>
+      <li>Landing directly on a symbol of power will pick it up and drop the old one, these enhance your strength and will
+        aid you in battle.</li>
+      <li>If a hunter moves into a square touching another hunter a one on one battle ensues. FIGHT!</li>
+      <li>The hunter who instigates the fight attacks first, then the retaliating hunter can defend.</li>
+      <li>At end of each turn a hunter can choose to raise their shield until their next turn to prepare for battle.</li>
+      <li>A raised shield reduces attack damage by half, but does not allow retaliation.</li>
+      <li>The last hunter standing has proven their strength and escapes the demon maze!</li>
+    </ul>
+  </div>
+  <!-- GAME OVER MODAL -->
+  <div id="gameOverModal" style="display: none;">
+    <div id="gameOverStyle">
+      <p>
+        <span id="gameOverTitle">VICTORY!</span>
+        <br>
+        <span id="congrats">You have proven your strength.</span>
+        <br>
+        <span id="winner"></span>
+        <br> escaped the demon maze!
+      </p>
+      <span id="gameOverClose">CLOSE</span>
+    </div>
+  </div>
+  <!-- SHIELD MODAL -->
+  <div id="shieldModal" style="display: none;">
+    <div id="shieldStyle">
+      <p>Change shield position?</p>
+      <span id="shieldUp" class="shieldButton">UP</span>
+      <span id="shieldDown" class="shieldButton">DOWN</span>
+    </div>
+  </div>
+  <div class="popup-bg"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
